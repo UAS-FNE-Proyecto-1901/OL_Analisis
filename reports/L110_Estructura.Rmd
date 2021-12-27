@@ -1,0 +1,255 @@
+# Personal
+
+```{r configuracion-L110, include=FALSE}
+require(tidyverse); theme_set(theme_bw())
+require(plotly)
+# require(sf)
+require(ggrepel)
+# require(ggsflabel)
+require(patchwork)
+# require(scatterpie)
+require(vistime)
+
+fig_path <- file.path('..', 'figures')
+
+barButtons <- c("zoomIn2d", "zoomOut2d", "lasso2d", "pan2d", 
+                                    "select2d", "drawclosedpath", "autoScale2d", "zoom2", 
+                                    "toggleSpikelines", "hoverCompareCartesian", "hoverClosestCartesian", 
+                                    "resetScale2d")
+```
+
+\maxdeadcycles=1000
+
+```{r distribucionPersonal, echo=FALSE, fig.cap='Distribución de personal en instituciones encuestadas.', fig.width=8, fig.height=6, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g1 <- readRDS(file.path(fig_path, '001_distribucionPersonal_b.rds'))
+g1
+```
+
+```{r servicios, echo=FALSE, fig.cap='N.° de servicios farmacéuticos vinculados que realizan dispensación de MME.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g0 <- readRDS(file.path(fig_path, '008_servicios.rds'))
+g0
+```
+
+```{r clausulaMCE, echo=FALSE, fig.cap='Mención de los medicamentos de control especial o MME en los contratos u funciones de los trabajadores.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g2 <- readRDS(file.path(fig_path, '003_MCE_contratos_2.rds'))
+g2
+```
+
+```{r corresponsabilidad, echo=FALSE, fig.cap='Presencia de una carta de corresponsabilidad con el personal encargado del manejo de MCE.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g3 <- readRDS(file.path(fig_path, '004_corresponsab_1.rds'))
+g3
+```
+# Capacitaciones en medicamentos de control especial
+
+Puede dar que no en instituciones donde no se realicen las capacitaciones en mención 
+
+```{r capacitaciones1, echo=FALSE, fig.cap='Mención de medicamentos de control especial o MME durante las capacitaciones al personal.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g4 <- readRDS(file.path(fig_path, '005_educacion_1.rds'))
+g4
+```
+
+```{r capacitaciones2, echo=FALSE, fig.cap='Frecuencia de capacitaciones en medicamentos incluyendo control especial al personal del servicio.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g5 <- readRDS(file.path(fig_path, '006_educacion_2.rds'))
+g5
+```
+
+```{r capacitaciones3, echo=FALSE, fig.cap='Realización de evaluaciones en las capacitaciones impartidas.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g6 <- readRDS(file.path(fig_path, '007_educacion_3.rds'))
+g6
+```
+
+
+# Disponibilidad
+
+# MiPRES/ROE
+
+```{r ROE1, echo=FALSE, fig.cap='Conocimiento de la iniciativa de Recetario Oficial Electrónico del FNE', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g10 <- readRDS(file.path(fig_path, '010_ROE_1.rds'))
+g10
+```
+
+```{r ROE2, echo=FALSE, fig.cap='Tras conocer la iniciativa ROE, que tan de acuerdo está con su implementación', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g11 <- readRDS(file.path(fig_path, '011_ROE_2.rds'))
+g11
+```
+
+```{r ROE3, echo=FALSE, fig.cap='Perspectiva actual en IPS sobre: (A) sistema MIPRES, (B) inclusión del ROE dentro del sistema MIPRES', fig.width=10, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g12a <- readRDS(file.path(fig_path, '012_ROE_3.rds'))
+g12b <- readRDS(file.path(fig_path, '012_ROE_3.rds'))
+wrap_plots(g12a, g12b) + plot_annotation(tag_levels = 'A')
+```
+
+
+# Inventario
+```{r inventario1, echo=FALSE, fig.cap='Herramientas utilizadas para el manejo de inventarios por las instituciones encuestadas.', fig.width=6, fig.height=3, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g15a <- readRDS(file.path(fig_path, '020_wordcloud1.rds'))
+g15a
+```
+
+```{r inventario2, echo=FALSE, fig.cap='Herramientas utilizadas para la estimación de compra por las instituciones. A. Gráfico de barras, B. Ejemplos de herramientas por cada tipo de encuestado.', fig.width=10, fig.height=8, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g15b <- readRDS(file.path(fig_path, '040_herramientaEstimacion.rds'))
+g15c <- readRDS(file.path(fig_path, '041_wordcloud2.rds'))
+
+wrap_plots(g15b, g15c) + plot_layout(ncol = 1)  + plot_annotation(tag_levels = 'A')
+```
+
+
+
+```{r tiempoEstimacion1, echo=FALSE, fig.cap='Tiempo que toma la estimación de necesidades.', fig.width=8, fig.height=3.5, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g17 <- readRDS(file.path(fig_path, '050_tiempoEstimacion.rds'))
+g17
+```
+
+```{r tiempoEstimacion2, echo=FALSE, fig.cap='Tiempo de solicitud de MME en la plataforma.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g17 <- readRDS(file.path(fig_path, '051_solicitudMME.rds'))
+g17
+```
+
+```{r tiempoEstimacion3, echo=FALSE, fig.cap='Tiempo de despacho de MME desde el FNE o FRE correspondiente.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g17 <- readRDS(file.path(fig_path, '052_despachoMME.rds'))
+g17
+```
+
+
+
+# Compras
+```{r frecCompras, echo=FALSE, fig.cap='Frecuencia de compras por año de medicamentos monopolio del Estado al FNE o FRE correspondiente.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g20 <- readRDS(file.path(fig_path, '053_mesesCompras.rds'))
+g20
+```
+
+
+```{r cantidadesSolicitadas, echo=FALSE, fig.cap='Entrega completa de pedidos de medicamentos MME para cada tipo de encuestado. A. Presencia de pedidos parciales. B. Medicamentos involucrados en pedidos pendientes', fig.width=10, fig.height=8, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g21a <- readRDS(file.path(fig_path, '060_cantidadesSolicitadas.rds'))
+g21b <- readRDS(file.path(fig_path, '061_medicamentosProblemasAbast.rds'))
+
+layout <- c("AAAAAA
+             BBBBBB")
+
+wrap_plots(g21a, g21b) + plot_layout(design = layout)
+
+```
+
+# Comunicaciones
+
+```{r comunicaciones, echo=FALSE, fig.cap='Medios de comunicación con el FNE empleados por las instituciones encuestadas.', fig.width=8, fig.height=6, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g16 <- readRDS(file.path(fig_path, '030_comunicación.rds '))
+g16
+```
+```{r opinionComunicaciones, echo=FALSE, fig.cap='Opinión frente a las comunicaciones con el FNE.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+gComun <- readRDS(file.path(fig_path, '110_opinionComunicaciones.rds '))
+gComun
+```
+```{r divulgacionCirculares, echo=FALSE, fig.cap='¿El proceso de divulgación de circulares externas por parte del FNE es adecuado?', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+gDivulg <- readRDS(file.path(fig_path, '111_divulgacionCirculares.rds '))
+gDivulg
+```
+
+# Transporte 
+
+```{r conformidadProcesoCompra, echo=FALSE, fig.cap='Percepción sobre el proceso de compra de medicamentos monopolio del Estado.', fig.width=8, fig.height=4.5, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g30 <- readRDS(file.path(fig_path, '062_medicamentosProblemasAbast.rds '))
+g30
+```
+```{r conformidadSistemaCompra, echo=FALSE, fig.cap='Percepción sobre el sistema para realizar compras de MME.', fig.width=8, fig.height=4.5, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g31 <- readRDS(file.path(fig_path, '063_conformidad.rds '))
+g31
+```
+```{r averiasProductos, echo=FALSE, fig.cap='Presentación de averías en productos MME provenientes del FNE o FRE respectivo.', fig.width=8, fig.height=4.5, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g32 <- readRDS(file.path(fig_path, '064_averias.rds '))
+g32
+```
+<!-- ## Presencia de averías en los productos recibidos -->
+
+<!-- ```{r averiasProductos, echo=FALSE, fig.cap='Presencia de averías en productos (MME) desde el FNE.', fig.width=6, fig.height=3, fig.topcaption=TRUE, out.width="100%", fig.align='center'} -->
+<!-- gcodigoBarras <- readRDS(file.path(fig_path, '140_averias.rds ')) -->
+<!-- gcodigoBarras -->
+<!-- ``` -->
+
+
+```{r procedimientosMCE, echo=FALSE, fig.cap='Documentación en el manejo de medicamentos monopolio del Estado en procedimientos operativos de la institución.', fig.width=8, fig.height=4.5, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g33 <- readRDS(file.path(fig_path, '065_procedimientos.rds '))
+g33
+```
+
+```{r disponibilidadTrasporte, echo=FALSE, fig.cap='Disponibilidad a pagar de la institución por la inclusión del servicio de transporte.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g34 <- readRDS(file.path(fig_path, '066_transportes.rds '))
+g34
+```
+
+# Almacenamiento
+
+```{r almacenamientoSeguridad, echo=FALSE, fig.cap='Medidas de seguridad dispuestas para el almacenamiento de medicamentos monopolio del Estado.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g35 <- readRDS(file.path(fig_path, '070_medidasSeguridad.rds '))
+g35
+```
+
+```{r revisionCondiciones, echo=FALSE, fig.cap='Frecuencia de revisión de condiciones medioambientales de medicamentos monopolio del Estado.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g36 <- readRDS(file.path(fig_path, '071_revisionCondiciones.rds '))
+g36
+```
+
+```{r nivelesSeguridad, echo=FALSE, fig.cap='Uso de niveles de seguridad en el inventario de la institución para MME.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g37 <- readRDS(file.path(fig_path, '080_nivelesSeguridad.rds '))
+g37
+```
+
+```{r reglasDecision, echo=FALSE, fig.cap='Reglas de decisión usadas para el reórden de MME.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g38 <- readRDS(file.path(fig_path, '081_reglasDecision.rds '))
+g38
+```
+
+```{r vencimientos, echo=FALSE, fig.cap='Medicamentos asociados a vencimientos de productos durante el almacenamiento en las instituciones.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g379 <- readRDS(file.path(fig_path, '090_vencimientos.rds '))
+g379
+```
+
+# Portafolio
+
+## Portafolio preguntas
+```{r portafolioPreguntas, echo=FALSE, fig.cap='Preguntas relacionadas al portafolio de medicamentos monopolio del Estado.', fig.width=7, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+g379 <- readRDS(file.path(fig_path, '201_portafolio.rds '))
+g379
+```
+```{r conformidadPresentaciones, echo=FALSE, fig.cap='Opinión sobre la conformidad con los productos del portafolio.', fig.width=7, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+presentProductos <- readRDS(file.path(fig_path, '210_conformidadPresentaciones.rds '))
+presentProductos
+```
+## Fenobarbital
+```{r fenobarbitalPresentaciones, echo=FALSE, fig.cap='Presentaciones de medicamentos con principio activo fenobarbital usados por las instituciones.', fig.width=7, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+fenoG <- readRDS(file.path(fig_path, '200_fenobarbital.rds '))
+fenoG
+```
+## Uso de magistrales o adecuaciones
+
+```{r usoMagistralesFNE, echo=FALSE, fig.cap='Uso de magistrales o adecuaciones de productos por parte de las instituciones. A. Uso de adecuaciones o magistrales, B. Adecuaciones/magistrales realizadas por parte de los encuestados.', fig.width=15, fig.height=6, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+magistrales1 <- readRDS(file.path(fig_path, '211_magistrales1.rds '))
+magistrales2 <- readRDS(file.path(fig_path, '212_magistrales2.rds '))
+
+wrap_plots(magistrales1, magistrales2) + plot_annotation(tag_levels = 'A')
+```
+
+
+# Otros
+
+## Códigos de barra
+
+```{r codigoBarras, echo=FALSE, fig.cap='Uso de códigos de barras en los medicamentos por parte de las instituciones.', fig.width=8, fig.height=4, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+gcodigoBarras <- readRDS(file.path(fig_path, '111_divulgacionCirculares.rds '))
+gcodigoBarras
+```
+
+## Diligenciamiento del Anexo 13
+```{r TiempoA13, echo=FALSE, fig.cap='Aspectos relacionados al diligenciamiento del Anexo 13 de la Resolución 1478 de 2006. A Tiempo de diligenciamiento, B. Fecha del mes en el que se diligencia, C. Presencia de errores en su diligenciamiento de manera histórica.', fig.width=10, fig.height=10, fig.topcaption=TRUE, out.width="100%", fig.align='center'}
+gTiempoA13 <- readRDS(file.path(fig_path, '120_tiempoDiligenciamientoA13.rds'))
+gFechaA13  <- readRDS(file.path(fig_path, '121_fechaDiligenciamientoA13.rds'))
+gMesesVar  <- readRDS(file.path(fig_path, '122_mesesAnexo.rds'))
+
+wrap_plots(gTiempoA13, gFechaA13, gMesesVar) + patchwork::plot_layout(ncol = 1) + patchwork::plot_annotation(tag_levels = 'A')
+```
+
+
+
+
+
+

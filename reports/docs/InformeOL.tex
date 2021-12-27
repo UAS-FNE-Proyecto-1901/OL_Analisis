@@ -1,0 +1,778 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  oneside]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Diagnóstico nacional de manejo de medicamentos monopolio del Estado en Instituciones Prestadoras de Salud y Operadores Logísticos},
+  pdfauthor={Proyecto de Inversión Mision PRI - 1901 Fondo Nacional de Estupefacientes},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+% Márgenes de páginas
+\usepackage[
+top=2.54cm, 			% Top margin
+bottom=2.54cm, 			% Bottom margin
+left=3.6cm, 			% Left margin
+right=2.54cm,    		% Right margin
+headheight=17pt, 		% as per the warning by fancyhdr
+includehead,includefoot,
+heightrounded, 			% to avoid spurious underfull messages
+%showframe, 			% Uncomment to show how the type block is set on the page
+]{geometry} 
+
+% Requerido para incluir figuras
+\usepackage{graphicx} 
+
+\usepackage{tikz} 
+\usetikzlibrary{plotmarks} % Paquete de plotmarks
+\usetikzlibrary{shapes,arrows.meta} % Paquete para flechas
+
+% Lenguaje Español, uso de punto en vez e coma para decimales, uso de tabla
+\usepackage[spanish,es-nodecimaldot, es-tabla]{babel} 
+
+% Personalizar listas
+\usepackage{enumitem} 
+\setlist{nolistsep} % Reducir espacio entre viñetas y listas numeradas
+
+% Requerido para líneas horizontales en tablas
+\usepackage{booktabs} 
+%
+\usepackage{multirow}
+\usepackage{balance}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{ltablex}
+\usepackage{tabularx}
+\usepackage{afterpage}
+
+% Fuentes
+\usepackage{avant}
+
+%----------------------------------------------------------------------------------------
+%	Colores definidos por usuario
+%----------------------------------------------------------------------------------------
+\usepackage{xcolor} % Required for specifying colors by name
+% Definición de Color
+\definecolor{ocre}{RGB}{243,102,25} 
+\definecolor{cyan}{RGB}{0,137,186}
+\definecolor{darkergreen}{RGB}{9,147,189}
+
+% Se cambia por el color Pantone del año 2020 Azul Clásico
+\definecolor{specialgreen}{RGB}{15,76,129} % Azul Clásico Pantone 19-4052
+\definecolor{babyblue}{RGB}{181,199,211} % Baby Blue Pantone 13-4308 TCX
+\definecolor{cornhusk}{RGB}{243,213,173} % Cornhusk Pantone 12-0714 TCX
+\definecolor{Peach-Quartz}{RGB}{245,184,149} % Peach Quartz Pantone 13-1125 TCX
+
+% Colores de Portada
+\definecolor{bgBlue}{RGB}{42,43,53}
+\definecolor{txBlue}{RGB}{66,87,158} 
+\definecolor{moradoMinisterio}{RGB}{153,15,62}
+
+
+\definecolor{equidad1}{RGB}{247,103,141}
+\definecolor{equidad2}{RGB}{244,47,99}
+\definecolor{equidad3}{RGB}{222,43,90}
+\definecolor{equidad4}{RGB}{238,80,138}
+\definecolor{equidad5}{RGB}{234,36,107}
+\definecolor{equidad6}{RGB}{190,12,77}
+
+\definecolor{igualdad1}{RGB}{230,239,253}
+\definecolor{igualdad2}{RGB}{157,190,255}
+\definecolor{igualdad3}{RGB}{129,171,255}
+\definecolor{igualdad4}{RGB}{74,126,255}
+\definecolor{igualdad5}{RGB}{91,139,255}
+\definecolor{igualdad6}{RGB}{55,114,255}
+\definecolor{igualdad7}{RGB}{88,129,213}
+\definecolor{igualdad8}{RGB}{69,115,208}
+\definecolor{igualdad9}{RGB}{51,102,204}
+
+\usepackage{mathptmx} 
+
+%----------------------------------------------------------------------------------------
+%	Tablas y subtablas
+%----------------------------------------------------------------------------------------
+\usepackage[labelfont={bf, color=equidad6}, font={bf, color=equidad6}]{caption}
+\usepackage[labelformat=simple, labelsep=period]{subcaption}
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+
+
+%----------------------------------------------------------------------------------------
+%	Bibliografía e índices
+%----------------------------------------------------------------------------------------
+%\usepackage{csquotes}	\usepackage[style=numeric,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,
+%autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,defernumbers=true]{biblatex}
+%\addbibresource{bibliography.bib} % BibTeX bibliography file
+%\defbibheading{bibempty}{}
+
+% Paquete de Referenciación Natbib
+\usepackage[square, sort, sectionbib]{natbib}
+\renewcommand{\bibsection}{} % Para quitar la palabra bibliografía como título de esta sección o colocar otra. 
+\setcitestyle{square}
+\bibliographystyle{vancouver}
+
+% Para un cálculo simple: se utiliza para espaciar correctamente los encabezados de las 
+% letras índice
+\usepackage{calc} 
+% Requerido para hacer un índice
+\usepackage{makeidx} 
+% que Crear los archivos necesarios para la indexación en Latex
+\makeindex 
+
+%----------------------------------------------------------------------------------------
+%	Encabezado de página
+%----------------------------------------------------------------------------------------
+% Requerido para la configuración de encabezado y pie de página
+\usepackage{fancyhdr} 
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+% Configuración de fuente de texto de capítulo
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} 
+% Configuración de fuente de texto de sección
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} 
+% Configuración de fuente para el número de página en el encabezado
+\fancyhf{} 
+%\fancyhead[LE,RO]{\sffamily\normalsize\thepage} 
+%\fancyhead[LO]{\rightmark} % Imprima el nombre de la sección más cercana en el lado izquierdo de las páginas impares
+%\fancyhead[RE]{\leftmark} % Imprima el nombre del capítulo actual en el lado derecho de las páginas pares
+
+%%\fancyhead[LE,RO]{\leftmark} 
+\fancyhead[LE,LO]{\includegraphics[width=0.5\paperwidth]{www/logos_MinSalud_FNE.png}} 
+\fancyhead[RO,RE]{}
+
+\renewcommand{\headrulewidth}{0.01pt} % De ancho de la regla debajo del encabezado
+\addtolength{\headheight}{15pt} % Aumente ligeramente el espacio alrededor del encabezado
+\renewcommand{\footrulewidth}{0pt} % Elimina la línea en el pie de página
+
+%%% Configurar pie de Página
+\setlength{\footskip}{40pt}
+%\lfoot{\mdseries Proyecto de Inversión - Misión PRI 1901}
+\cfoot{}
+%\rfoot{\mdseries Página~\thepage}
+
+\fancyfoot[LO,LE]{\mdseries Proyecto de Inversión - Misión PRI 1901}
+\fancyfoot[RE,RO]{\mdseries Página~\thepage}
+
+% Estilo para cuando se especifica un estilo de página simple (p.ej. inicio capítulo)
+\fancypagestyle{plain}{%
+	\fancyhead[LE,LO]{\includegraphics[width=0.5\paperwidth]{www/logos_MinSalud_FNE.png}}%
+	\renewcommand{\headrulewidth}{0.01pt}%
+	\addtolength{\headheight}{15pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+	\setlength{\footskip}{40pt}%
+	\fancyfoot[LO,LE]{\mdseries Proyecto de Inversión - Misión PRI 1901}%
+	\fancyfoot[RE,RO]{\mdseries Página~\thepage}}
+%\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Estilo para cuando se especifica un estilo de página simple
+
+% Elimina el encabezado de páginas vacías impares al final de los capítulos
+%\makeatletter
+%\renewcommand{\cleardoublepage}{
+%	\clearpage\ifodd\c@page\else
+%	\hbox{}
+%	\vspace*{\fill}
+%	\thispagestyle{empty}
+%	\newpage
+%	\fi
+%}
+
+%% Esto se usa para prevenir el error de flotas sobrepasados en ciclos
+\usepackage[maxfloats=256]{morefloats}
+\usepackage{tikz} 
+\usetikzlibrary{plotmarks} 
+\usetikzlibrary{shapes,arrows.meta} 
+
+%%%%%%%%%%%%%%
+
+\usepackage{sectsty}
+\chapterfont{\bf\color{igualdad9}}
+\sectionfont{\bfseries \color{igualdad9}}
+\subsectionfont{\color{igualdad9}}
+\subsubsectionfont{\color{igualdad9}}
+
+%----------------------------------------------------------------------------------------
+% Fuente oficial del Ministerio de Salud y la Protección Social
+%----------------------------------------------------------------------------------------
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\title{Diagnóstico nacional de manejo de medicamentos monopolio del Estado en Instituciones Prestadoras de Salud y Operadores Logísticos}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Informe Final de Visitas Técnicas a Instituciones Prestadoras de Salud (IPS) y Operadores Logísticos}
+\author{Proyecto de Inversión Mision PRI - 1901 Fondo Nacional de Estupefacientes}
+\date{17 de diciembre de 2021}
+
+\begin{document}
+
+\frontmatter
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[overlay, remember picture] %-Cambio de fondo de página
+	% Crea una coordenada 12 cm por debajo del norte de la página
+	\coordinate [right=11cm, below=06.5cm] (highpoint) at (current page.north west);
+	\coordinate [right=11cm, below=17.5cm] (midpoint) at (current page.north west);
+	\coordinate [right=11cm, below=19.0cm] (lowpoint) at (current page.north west);
+	\coordinate [right=7.5cm, below=24.2cm] (finalLogo) at (current page.north west);
+	% Inicia una nueva figura al nor oeste
+	\node at (current page.north west)
+	{
+		\begin{tikzpicture}[overlay, remember picture]
+			%- 
+			% Imagen de Fondo
+			\node[anchor=north west, inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{www/Portada_2.pdf}};	
+			\draw[anchor=north] (highpoint) node [fill=bgBlue, fill opacity=0.00, text opacity=1.0, inner sep=1cm,  text=txBlue]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{20cm}
+				{\centering Manejo de medicamentos monopolio del Estado en una muestra de Instituciones Prestadoras de Salud y Operadores Logísticos en Bogotá y varios municipios del País}};  
+			\draw[anchor=north] (midpoint) node [fill=bgBlue, fill opacity=0.00, text opacity=1, inner sep=1cm, text=txBlue]{\LARGE\centering\bfseries\sffamily\parbox[c][][t]{16cm} {Proyecto de Inversión Misión PRI 1901}}; 
+			\draw[anchor=north] (lowpoint) node [fill=bgBlue, fill opacity=0.00, text opacity=1, inner sep=1cm, text=txBlue]{\LARGE\centering\bfseries\sffamily\parbox[c][][t]{16cm} {17 de diciembre de 2021}};
+			
+			\draw[anchor=north west] (finalLogo) node[inner sep=0pt] {\includegraphics[width=0.6\paperwidth]{www/Logo-MinSalud-FNE-Fondo-oscuro-2.png}};
+			%%\node[inner sep=0pt] (finalLogo) {\includegraphics[width=0.3\paperwidth]{logos MinSalud_FNE.png}};
+	\end{tikzpicture}};
+	
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%\cleardoublepage
+\newpage\null\thispagestyle{empty}\newpage
+
+\include{titulos}
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+\noindent Copyright \copyright\ 2021 Fondo Nacional de Estupefacientes \\ % Copyright notice
+\noindent \textsc{Publicado por el Fondo Nacional de Estupefacientes}\\ % Publisher
+%%\noindent \textsc{Dirección de Contacto: dsparrag@unal.edu.co}\\ % URL
+\noindent \textit{Primera Impresión, Diciembre 2021} \\ % Printing/edition date
+\medskip
+\medskip
+\medskip
+
+
+%%%%%%%%%\maketitle
+%%%%%%%%%
+\cleardoublepage
+%%% \pagestyle{empty}
+\thispagestyle{empty}
+\hypertarget{tocpage}{}
+\renewcommand*\contentsname{Tabla de Contenidos}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmark[dest=tocpage, level=0, named=tocpage, color=moradoMinisterio]{\contentsname} %\pdfbookmark[0]{\contentsname}{toc}
+
+\cleardoublepage\phantomsection
+\renewcommand{\listfigurename}{Lista de figuras}
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+%%% 
+\cleardoublepage\phantomsection
+\renewcommand{\listtablename}{Lista de tablas}
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+%%% 
+\mainmatter
+\hypertarget{prefacio}{%
+\chapter*{Prefacio}\label{prefacio}}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+El FNE (\emph{Fondo Nacional de Estupefacientes}) tiene como objetivo la vigilancia y control sobre la importación, la exportación, la distribución y venta de drogas, medicamentos, materias primas o precursores de control especial, a que se refiere la Ley 30 de 1986 y las demás disposiciones que expida el Ministerio de la Protección Social, así como apoyar a los programas contra la farmacodependencia que adelanta el Gobierno Nacional.
+
+En los últimos años, la planeación de las cantidades de medicamentos monopolio del Estado (MME) para satisfacer la demanda en los entes territoriales se ha visto afectada por:
+
+\begin{itemize}
+\item
+  La variabilidad en el incremento o disminución de la distribución y necesidad de MME.
+\item
+  El desarrollo de guías de práctica clínica en condiciones relacionadas a los medicamentos que hacen parte del portafolio tanto a nivel nacional como internacional.
+\item
+  La calidad de la información de disponibilidad remitida por los Fondos Rotatorios de Estupefacientes (FRE).
+\item
+  Las diferentes barreras administrativas de índole territorial que impactan en el acceso de estos medicamentos por parte de los pacientes.
+\end{itemize}
+
+Por consiguiente, el desarrollo de este proyecto se enmarca en una estrategia integral con el fin de contribuir a mejorar la calidad de la atención de los pacientes y a la salud pública del país, garantizando el acceso, disponibilidad y uso racional de los medicamentos de control especial y MME.
+
+En la formulación del proyecto se planteó la entrega de productos relacionados con un análisis del rol del FNE, FRE e instituciones prestadoras de salud (IPS) en la cadena de suministro de medicamentos monopolio del Estado y su ciclo de uso, todo orientado a la utilización racional de estos medicamentos en todo el territorio nacional. Esto productos pueden constituir una fuente de información consolidada para el desarrollo del Recetario Oficial Electrónico (ROE), así como en el desarrollo de herramientas que permitan estandarizar los procesos de proyección de compra y el seguimiento de inventarios de MME por parte de los entes territoriales, de tal manera que se mitigue el riesgo de desabastecimiento mediante la gestión de inventarios acorde a las necesidades de la población.
+
+El trabajo territorial es una experiencia de aprendizaje recíproco y constante. Dentro de las Jornadas de inmersión territorial se observó, no solamente las condiciones actuales en la que se encuentran los FRE alrededor de la Nación, sino el entusiasmo con la que los funcionarios se interesan por el bienestar y la salud pública de sus regiones, aún cuando se presentan diferentes adversidades y altibajos en el desarrollo de las procesos en sus departamentos.
+
+Agradecemos a cada referente de cada FRE y a cada funcionario de apoyo, por tan acogedor recibimiento del que hicieron partícipe al equipo territorial del Proyecto de Inversión 1901, reafirmando que parte de la belleza de Colombia es la calidez y amabilidad de sus habitantes. También queremos agradecer al FNE y a su íntegro equipo, coordinadores y apoyos territoriales, por brindarnos todos los recursos, herramientas y ser una guía para llevar a cabo el proceso de esta investigación.
+
+\hypertarget{introducciuxf3n}{%
+\chapter{Introducción}\label{introducciuxf3n}}
+
+Este es un análisis de medicamentos monopolio del Estado en IPS y operadores logísticos
+
+\hypertarget{personal}{%
+\chapter{Personal}\label{personal}}
+
+\maxdeadcycles=1000
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/distribucionPersonal-1} 
+
+}
+
+\caption{Distribución de personal en instituciones encuestadas.}\label{fig:distribucionPersonal}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/servicios-1} 
+
+}
+
+\caption{N.° de servicios farmacéuticos vinculados que realizan dispensación de MME.}\label{fig:servicios}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/clausulaMCE-1} 
+
+}
+
+\caption{Mención de los medicamentos de control especial o MME en los contratos u funciones de los trabajadores.}\label{fig:clausulaMCE}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/corresponsabilidad-1} 
+
+}
+
+\caption{Presencia de una carta de corresponsabilidad con el personal encargado del manejo de MCE.}\label{fig:corresponsabilidad}
+\end{figure}
+
+\hypertarget{capacitaciones-en-medicamentos-de-control-especial}{%
+\chapter{Capacitaciones en medicamentos de control especial}\label{capacitaciones-en-medicamentos-de-control-especial}}
+
+Puede dar que no en instituciones donde no se realicen las capacitaciones en mención
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/capacitaciones1-1} 
+
+}
+
+\caption{Mención de medicamentos de control especial o MME durante las capacitaciones al personal.}\label{fig:capacitaciones1}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/capacitaciones2-1} 
+
+}
+
+\caption{Frecuencia de capacitaciones en medicamentos incluyendo control especial al personal del servicio.}\label{fig:capacitaciones2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/capacitaciones3-1} 
+
+}
+
+\caption{Realización de evaluaciones en las capacitaciones impartidas.}\label{fig:capacitaciones3}
+\end{figure}
+
+\hypertarget{disponibilidad}{%
+\chapter{Disponibilidad}\label{disponibilidad}}
+
+\hypertarget{mipresroe}{%
+\chapter{MiPRES/ROE}\label{mipresroe}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/ROE1-1} 
+
+}
+
+\caption{Conocimiento de la iniciativa de Recetario Oficial Electrónico del FNE}\label{fig:ROE1}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/ROE2-1} 
+
+}
+
+\caption{Tras conocer la iniciativa ROE, que tan de acuerdo está con su implementación}\label{fig:ROE2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/ROE3-1} 
+
+}
+
+\caption{Perspectiva actual en IPS sobre: (A) sistema MIPRES, (B) inclusión del ROE dentro del sistema MIPRES}\label{fig:ROE3}
+\end{figure}
+
+\hypertarget{inventario}{%
+\chapter{Inventario}\label{inventario}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/inventario1-1} 
+
+}
+
+\caption{Herramientas utilizadas para el manejo de inventarios por las instituciones encuestadas.}\label{fig:inventario1}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/inventario2-1} 
+
+}
+
+\caption{Herramientas utilizadas para la estimación de compra por las instituciones. A. Gráfico de barras, B. Ejemplos de herramientas por cada tipo de encuestado.}\label{fig:inventario2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/tiempoEstimacion1-1} 
+
+}
+
+\caption{Tiempo que toma la estimación de necesidades.}\label{fig:tiempoEstimacion1}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/tiempoEstimacion2-1} 
+
+}
+
+\caption{Tiempo de solicitud de MME en la plataforma.}\label{fig:tiempoEstimacion2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/tiempoEstimacion3-1} 
+
+}
+
+\caption{Tiempo de despacho de MME desde el FNE o FRE correspondiente.}\label{fig:tiempoEstimacion3}
+\end{figure}
+
+\hypertarget{compras}{%
+\chapter{Compras}\label{compras}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/frecCompras-1} 
+
+}
+
+\caption{Frecuencia de compras por año de medicamentos monopolio del Estado al FNE o FRE correspondiente.}\label{fig:frecCompras}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/cantidadesSolicitadas-1} 
+
+}
+
+\caption{Entrega completa de pedidos de medicamentos MME para cada tipo de encuestado. A. Presencia de pedidos parciales. B. Medicamentos involucrados en pedidos pendientes}\label{fig:cantidadesSolicitadas}
+\end{figure}
+
+\hypertarget{comunicaciones}{%
+\chapter{Comunicaciones}\label{comunicaciones}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/comunicaciones-1} 
+
+}
+
+\caption{Medios de comunicación con el FNE empleados por las instituciones encuestadas.}\label{fig:comunicaciones}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/opinionComunicaciones-1} 
+
+}
+
+\caption{Opinión frente a las comunicaciones con el FNE.}\label{fig:opinionComunicaciones}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/divulgacionCirculares-1} 
+
+}
+
+\caption{¿El proceso de divulgación de circulares externas por parte del FNE es adecuado?}\label{fig:divulgacionCirculares}
+\end{figure}
+
+\hypertarget{transporte}{%
+\chapter{Transporte}\label{transporte}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/conformidadProcesoCompra-1} 
+
+}
+
+\caption{Percepción sobre el proceso de compra de medicamentos monopolio del Estado.}\label{fig:conformidadProcesoCompra}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/conformidadSistemaCompra-1} 
+
+}
+
+\caption{Percepción sobre el sistema para realizar compras de MME.}\label{fig:conformidadSistemaCompra}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/averiasProductos-1} 
+
+}
+
+\caption{Presentación de averías en productos MME provenientes del FNE o FRE respectivo.}\label{fig:averiasProductos}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/procedimientosMCE-1} 
+
+}
+
+\caption{Documentación en el manejo de medicamentos monopolio del Estado en procedimientos operativos de la institución.}\label{fig:procedimientosMCE}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/disponibilidadTrasporte-1} 
+
+}
+
+\caption{Disponibilidad a pagar de la institución por la inclusión del servicio de transporte.}\label{fig:disponibilidadTrasporte}
+\end{figure}
+
+\hypertarget{almacenamiento}{%
+\chapter{Almacenamiento}\label{almacenamiento}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/almacenamientoSeguridad-1} 
+
+}
+
+\caption{Medidas de seguridad dispuestas para el almacenamiento de medicamentos monopolio del Estado.}\label{fig:almacenamientoSeguridad}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/revisionCondiciones-1} 
+
+}
+
+\caption{Frecuencia de revisión de condiciones medioambientales de medicamentos monopolio del Estado.}\label{fig:revisionCondiciones}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/nivelesSeguridad-1} 
+
+}
+
+\caption{Uso de niveles de seguridad en el inventario de la institución para MME.}\label{fig:nivelesSeguridad}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/reglasDecision-1} 
+
+}
+
+\caption{Reglas de decisión usadas para el reórden de MME.}\label{fig:reglasDecision}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/vencimientos-1} 
+
+}
+
+\caption{Medicamentos asociados a vencimientos de productos durante el almacenamiento en las instituciones.}\label{fig:vencimientos}
+\end{figure}
+
+\hypertarget{portafolio}{%
+\chapter{Portafolio}\label{portafolio}}
+
+\hypertarget{portafolio-preguntas}{%
+\section{Portafolio preguntas}\label{portafolio-preguntas}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/portafolioPreguntas-1} 
+
+}
+
+\caption{Preguntas relacionadas al portafolio de medicamentos monopolio del Estado.}\label{fig:portafolioPreguntas}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/conformidadPresentaciones-1} 
+
+}
+
+\caption{Opinión sobre la conformidad con los productos del portafolio.}\label{fig:conformidadPresentaciones}
+\end{figure}
+
+\hypertarget{fenobarbital}{%
+\section{Fenobarbital}\label{fenobarbital}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/fenobarbitalPresentaciones-1} 
+
+}
+
+\caption{Presentaciones de medicamentos con principio activo fenobarbital usados por las instituciones.}\label{fig:fenobarbitalPresentaciones}
+\end{figure}
+
+\hypertarget{uso-de-magistrales-o-adecuaciones}{%
+\section{Uso de magistrales o adecuaciones}\label{uso-de-magistrales-o-adecuaciones}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/usoMagistralesFNE-1} 
+
+}
+
+\caption{Uso de magistrales o adecuaciones de productos por parte de las instituciones. A. Uso de adecuaciones o magistrales, B. Adecuaciones/magistrales realizadas por parte de los encuestados.}\label{fig:usoMagistralesFNE}
+\end{figure}
+
+\hypertarget{otros}{%
+\chapter{Otros}\label{otros}}
+
+\hypertarget{cuxf3digos-de-barra}{%
+\section{Códigos de barra}\label{cuxf3digos-de-barra}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/codigoBarras-1} 
+
+}
+
+\caption{Uso de códigos de barras en los medicamentos por parte de las instituciones.}\label{fig:codigoBarras}
+\end{figure}
+
+\hypertarget{diligenciamiento-del-anexo-13}{%
+\section{Diligenciamiento del Anexo 13}\label{diligenciamiento-del-anexo-13}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{InformeOL_files/figure-latex/TiempoA13-1} 
+
+}
+
+\caption{Aspectos relacionados al diligenciamiento del Anexo 13 de la Resolución 1478 de 2006. A Tiempo de diligenciamiento, B. Fecha del mes en el que se diligencia, C. Presencia de errores en su diligenciamiento de manera histórica.}\label{fig:TiempoA13}
+\end{figure}
+
+\hypertarget{cruxe9ditos}{%
+\chapter*{Créditos}\label{cruxe9ditos}}
+\addcontentsline{toc}{chapter}{Créditos}
+
+\hypertarget{grupo-desarrollador}{%
+\subsection*{Grupo Desarrollador}\label{grupo-desarrollador}}
+\addcontentsline{toc}{subsection}{Grupo Desarrollador}
+
+\textbf{Coordinación}
+
+\begin{itemize}\item  Diego Alejandro Socha Cuitiva (Gerencia de proyecto)\item  Hilary Andrea Gómez Guerra (Coordinación de proyecto)\end{itemize}
+
+\textbf{Apoyo}
+
+\begin{itemize}\item  Carlos Andres Acosta Pinto (Apoyo Técnico y Operativo del Proyecto)\item  Daniela del Pilar Carvajal Latorre (Apoyo Técnico y Operativo del Proyecto)\end{itemize}
+
+\textbf{Realización de encuestas}
+
+\begin{itemize}\item  Carlos Guillermo Leal Jimenez (Profesional de equipo técnico territorial)\item  Jhonathan Felipe Venegas Parra (Profesional de equipo técnico territorial)\item  Nicolás Alexander Cadena Ayala (Profesional de equipo técnico territorial)\item  Wilder Estiben Meneses Garavito (Profesional de equipo técnico territorial)\end{itemize}
+
+\textbf{Estadística}
+
+\begin{itemize}\item  Daniel Sebastián Parra González (Profesional universitario del equipo técnico del proyecto)\end{itemize}
+
+\textbf{Comunicaciones}
+
+\begin{itemize}\item  Julieth Fernanda Contreras Garcia (Coordinadora de Equipo de Comunicación)\item  Fabian Oswaldo Millán Ibarra (Profesional de Equipo de Comunicación)\end{itemize}
+
+\hypertarget{agradecimientos}{%
+\subsection*{Agradecimientos}\label{agradecimientos}}
+\addcontentsline{toc}{subsection}{Agradecimientos}
+
+Agradecemos profundamente al Departamento Nacional de Planeación (DNP) por la inversión realizada a través del Proyecto de Inversión BPIN 2020011000020.
+
+Agradecemos a nuestra directora la Dra. Zoraya López Díaz por su compromiso con los proyectos de inversión y su entusiasmo por el trabajo territorial llevado a cabo por nuestro equipo.
+
+Agradecemos a los Grupos Interno de Trabajo del Fondo Nacional de Estupefacientes por brindarnos su apoyo en las diversas actividades relacionadas a acceso, contratación, viáticos, desplazamientos, y apoyo técnico en general.
+
+\end{document}

@@ -1,0 +1,166 @@
+# Créditos {-}
+
+### Grupo Desarrollador {-}
+
+```{r include=FALSE}
+bloqueContactos <-
+    function(Nombre = 'Nombre',
+             Cargo = 'Cargo',
+             ruta = "./credit_figures/person_icon.jpg",
+             img_alt = "person_icon_logo") {
+      #
+      tags <- htmltools::tags
+      
+      tags$div(
+        tags$div(tags$img(src = ruta, alt = img_alt, class="credImagenInside"),
+                 class = "credImagen"),
+        tags$div(
+          tags$div(tags$strong(Nombre, display='block'),
+                   class = "credAutorTitulo"),
+          tags$div(tags$i(Cargo, display='block'),
+                   class = "credAutorCargo"),
+          class = "credAutor"
+        ),
+        class = "credPrincipal"
+      )
+    }
+credits_fig <- file.path('.', 'credit_figures')
+
+
+crearListaLatex <- function(lista) {
+  cat("\\begin{itemize}")
+  for (j in seq_along(lista)) {
+    cat('\\item ', lista[j])
+  }
+  cat("\\end{itemize}")
+}
+```
+
+
+<hr>
+**Coordinación**
+<br>
+```{r creditos1, echo=FALSE, warning=FALSE, results="asis"}
+tag1 <- htmltools::tags
+
+box1 <- tag1$div(
+  bloqueContactos('Diego Alejandro Socha Cuitiva', 'Gerencia de proyecto',
+                  './credit_figures/diego.jpeg'),
+  bloqueContactos('Hilary Andrea Gómez Guerra', 'Coordinación de proyecto',
+                  './credit_figures/hillary.jpeg'),
+  class = "credPrincipalSup"
+)
+# 
+box2 <- 
+crearListaLatex(c('Diego Alejandro Socha Cuitiva (Gerencia de proyecto)', 
+                  'Hilary Andrea Gómez Guerra (Coordinación de proyecto)'))
+# 
+if(knitr::is_html_output()){
+  box1
+} else {
+  invisible(box2)
+}
+```
+
+<hr>
+**Apoyo**
+<br>
+```{r, echo=FALSE, warning=FALSE, results="asis"}
+box1 <- tag1$div(
+  bloqueContactos('Carlos Andres Acosta Pinto', 'Apoyo Técnico y Operativo del Proyecto',
+                  './credit_figures/carlos.jpeg'),
+  bloqueContactos('Daniela del Pilar Carvajal Latorre', 'Apoyo Técnico y Operativo del Proyecto',
+                  './credit_figures/daniela.jpeg'),
+  class = "credPrincipalSup"
+)
+# 
+box2 <- 
+crearListaLatex(c('Carlos Andres Acosta Pinto (Apoyo Técnico y Operativo del Proyecto)', 
+                  'Daniela del Pilar Carvajal Latorre (Apoyo Técnico y Operativo del Proyecto)'))
+# 
+if(knitr::is_html_output()){
+  box1
+} else {
+  invisible(box2)
+}
+```
+
+<hr>
+**Realización de encuestas**
+<br>
+```{r, Realización de encuestas, echo=FALSE, warning=FALSE, results="asis"}
+box1 <- tag1$div(
+  bloqueContactos('Carlos Guillermo Leal Jimenez', 'Profesional de equipo técnico territorial',
+                  './credit_figures/guillermo.jpeg'),
+  bloqueContactos('Jhonathan Felipe Venegas Parra', 'Profesional de equipo técnico territorial',
+                  './credit_figures/jonathan.jpeg'),
+  bloqueContactos('Nicolás Alexander Cadena Ayala', 'Profesional de equipo técnico territorial',
+                  './credit_figures/nicolas.jpeg'),
+  bloqueContactos('Wilder Estiben Meneses Garavito', 'Profesional de equipo técnico territorial',
+                  './credit_figures/estiben.jpeg'),
+  class = "credPrincipalSup"
+)
+ 
+box2 <- crearListaLatex(
+  c(
+    'Carlos Guillermo Leal Jimenez (Profesional de equipo técnico territorial)',
+    'Jhonathan Felipe Venegas Parra (Profesional de equipo técnico territorial)',
+    'Nicolás Alexander Cadena Ayala (Profesional de equipo técnico territorial)',
+    'Wilder Estiben Meneses Garavito (Profesional de equipo técnico territorial)'
+  )
+)
+
+if(knitr::is_html_output()){
+  box1
+} else {
+  invisible(box2)
+}
+```
+
+<hr>
+**Estadística**
+<br>
+```{r, Estadistica, echo=FALSE, warning=FALSE, results="asis"}
+box1 <- tag1$div(
+  bloqueContactos('Daniel Sebastián Parra González', 'Profesional universitario del equipo técnico del proyecto', 
+                  './credit_figures/daniel.jpeg'),
+  class = "credPrincipalSup"
+)
+# 
+box2 <- crearListaLatex(c('Daniel Sebastián Parra González (Profesional universitario del equipo técnico del proyecto)'))
+
+if(knitr::is_html_output()){
+  box1
+} else {
+  invisible(box2)
+}
+```
+
+<hr>
+**Comunicaciones**
+<br>
+```{r, Diagramacion, echo=FALSE, warning=FALSE, results="asis"}
+box1 <- tag1$div(
+  bloqueContactos('Fabian Oswaldo Millán Ibarra', 'Profesional de Equipo de Comunicación'),
+  class = "credPrincipalSup"
+)
+# 
+box2 <- crearListaLatex(c(
+  'Julieth Fernanda Contreras Garcia (Coordinadora de Equipo de Comunicación)',
+  'Fabian Oswaldo Millán Ibarra (Profesional de Equipo de Comunicación)'
+))
+
+if(knitr::is_html_output()){
+  box1
+} else {
+  invisible(box2)
+}
+```
+
+### Agradecimientos {-}
+
+Agradecemos profundamente al Departamento Nacional de Planeación (DNP) por la inversión realizada a través del Proyecto de Inversión BPIN 2020011000020.
+
+Agradecemos a nuestra directora la Dra. Zoraya López Díaz por su compromiso con los proyectos de inversión y su entusiasmo por el trabajo territorial llevado a cabo por nuestro equipo.
+
+Agradecemos a los Grupos Interno de Trabajo del Fondo Nacional de Estupefacientes por brindarnos su apoyo en las diversas actividades relacionadas a acceso, contratación, viáticos, desplazamientos, y apoyo técnico en general.

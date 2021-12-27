@@ -1,0 +1,8 @@
+book_filename: "InformeOL"
+output_dir: docs
+toc: yes
+fig_caption: true
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
